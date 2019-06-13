@@ -1,7 +1,7 @@
 # This is an introduction to object orientation
 
 class Enemy:
-    """ This class contains all the enemies that we will dight. It has attritubes for life and name, 
+    """ This class contains all the enemies that we will fight. It has attritubes for life and name, 
     as well as functions that decrease its health and check its life. """
     
     def __init__(self, name, life):
@@ -24,7 +24,17 @@ class Enemy:
             print("I am dead")
         
         else:
-            print(self._name,"his/her health is:",self._life)
+            print("{} has {} life left".format(self._name,self._life))
+            
+    def get_name(self):
+        """ This function returns the name of the object. """
+        
+        return self._name
+    
+    def get_life(self):
+        """ This function returns the life of the object. """
+        
+        return self._life
             
 # To create an instance of a class, we set it as a variable
 enemy1 = Enemy("Dr Evil", 10)
@@ -34,9 +44,5 @@ enemy2 = Enemy("Memes", 5)
 enemy1.attack(5)
 enemy1.checklife()
 
-
-enemy2.attack(5)
-enemy2.checklife()
-        
     
-    
+print("{} has {} life left".format(enemy1.get_name(), enemy1.get_life()))
